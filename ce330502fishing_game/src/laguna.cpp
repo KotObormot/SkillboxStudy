@@ -58,13 +58,12 @@ void Laguna::fishing() {
         }
 //          catch(std::out_of_range e) {        — передача исключения по значению
 //                                              Это может вызвать object slicing. Надо передавать по ссылке: AI
-        catch(const std::out_of_range e) {
+        catch(const std::out_of_range& e) {
             std::cout /*<< "Error. (Code: " << e.what() << ") - "*/ << "Past the lagoon! Try again!\n";
         }
         catch(const FishException& ex) {
 //            laguna.at(i) = 0;                     For the future
-            std::cout << ex.what() << "\n";
-            ex.getAttempts();            
+            std::cout << ex.what() << " Number of attempts: " << ex.getAttempts() << "\n";
             break;
         }
         catch(const BootException& ex) {

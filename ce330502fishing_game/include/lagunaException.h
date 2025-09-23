@@ -11,8 +11,9 @@ class FishException : public std::exception {
     ~FishException() = default;
     
     const char* what() const noexcept override;
-    const void getAttempts() const noexcept;    // не возвращает значение, а печатает
-                                                // Это нарушает ожидания от геттера — геттер должен возвращать значение, а не печатать.
+//    const void getAttempts() const noexcept;    // не возвращает значение, а печатает
+//                                                // Это нарушает ожидания от геттера — геттер должен возвращать значение, а не печатать.
+    const int getAttempts() const noexcept;
 };
 
 class BootException : public std::exception {

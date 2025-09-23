@@ -7,8 +7,12 @@ const char* FishException::what() const noexcept {
       return message;
 }
 
-const void FishException::getAttempts() const noexcept {
-    std::cout << "Number of attempts: " << attempts << "\n";
+//const void FishException::getAttempts() const noexcept {
+//    std::cout << "Number of attempts: " << attempts << "\n";
+//}
+
+const int FishException::getAttempts() const noexcept {
+    return attempts;
 }
 
 BootException::BootException(const char* message) : message(message) {}
