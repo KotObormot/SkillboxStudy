@@ -12,4 +12,5 @@ tmp*
 build/
 data
 bin/
+*.bin
 #nlohmann_json
