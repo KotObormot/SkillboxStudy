@@ -46,3 +46,7 @@ const double getPI() {
     return std::atan(1.0) * 4;
     // return acos(-1.0);
 }
+
+const double getE() {
+    return std::exp(1.0);
+}

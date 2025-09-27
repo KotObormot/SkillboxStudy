@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.17)
 
 add_executable(${PROJECT_NAME} main.cpp
-               ${INCLUDE_DIR}/common.h
+               #${INCLUDE_DIR}/common.h
                ${INCLUDE_DIR}/loclib.h loclib.cpp
-               ${INCLUDE_DIR}/message.h
+               #${INCLUDE_DIR}/message.h
                ${INCLUDE_DIR}/registry.h
+               #${INCLUDE_DIR}/registry.h registry.cpp
                )
 
 set_target_properties(

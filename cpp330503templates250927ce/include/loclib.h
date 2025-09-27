@@ -1,5 +1,9 @@
 #pragma once
-#include "common.h"
+//#include "common.h"
+
+#include <iostream>
+#include <vector>
+#include <string>
 #include <cmath>
 #include <limits> // для std::numeric_limits
 
@@ -12,6 +16,8 @@ std::string correctCommandInput(const std::string&);
 std::string normString(const std::string&);
 
 const double getPI();
+
+const double getE();
 
 template<typename T>
 T handlingInput(T k) {
