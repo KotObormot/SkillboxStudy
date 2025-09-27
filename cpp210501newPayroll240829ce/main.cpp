@@ -9,11 +9,11 @@
 #define DEBUG false
 
 struct Recipients {
-    std::string name {""};
+    std::string name {};
     //char name[50];
-    std::string surname {""};
-    std::string date {""};
-    double salary {0};
+    std::string surname {};
+    std::string date {};
+    double salary {};
 };
 
 inline void eatline() {
