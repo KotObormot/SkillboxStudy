@@ -662,8 +662,7 @@ void Village::read_homestead(const std::string& fileLocation) {
     for(int i = 0; i < homestead.size(); ++i) {
         homestead[i].read_building(fileLocation);
         homestead[i].read_house(fileLocation);
-    }
-    
+    }    
 }
 
 void Village::print_homestead(int num) {
@@ -798,9 +797,9 @@ void accessing_data(const Village& village) {
 int main() {
     std::cout << "Hello\n";
     std::cout.setf(std::ios::fixed);    
-    std::string fileLocation /*{"../data/210502/"}*/;
+    std::string fileLocation {"../data/210502/"};
     std::cout << "File location-->";
-    std::cin >> fileLocation;
+//    std::cin >> fileLocation;
     
     char choice {};
     while(choice != 'q') {
@@ -844,6 +843,5 @@ int main() {
             accessing_data(village);
         }
     }
-    
     return 0;
 }
