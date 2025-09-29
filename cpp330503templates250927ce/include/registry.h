@@ -2,16 +2,16 @@
 #include <vector>
 #include <iostream>
 
-template<typename T>
+template<typename Key, typename Value>
 class Registry {
   private:
     struct OneRow {
-        T key;
-        T value;
+        Key key;
+        Value value;
 
         OneRow() = default;
         ~OneRow() = default;
-        OneRow(T key, T value) : key(key), value(value) {};
+        OneRow(Key key, Value value) : key(key), value(value) {};
         
         void print() const;
     };
@@ -21,32 +21,32 @@ class Registry {
     Registry() = default;
     ~Registry() = default;
 
-    void add(T, T);
-    void remove(T);
-    void print();
-    void find(T);
+    void add(Key, Value);
+    void remove(Key);
+    void print() const;
+    void find(Key) const;
 };
 
-template<typename T>
-void Registry<T>::OneRow::print() const {
+template<typename Key, typename Value>
+void Registry<Key, Value>::OneRow::print() const {
     std::cout << key << ":\t" << value << "\n";
 }
 
-template<typename T>
-void Registry<T>::add(T key, T value) {
+template<typename Key, typename Value>
+void Registry<Key, Value>::add(Key key, Value value) {
     OneRow oneRow(key, value);
     registry.emplace_back(oneRow);
 }
 
-template<typename T>
-void Registry<T>::remove(T keyToRemove) {
+template<typename Key, typename Value>
+void Registry<Key, Value>::remove(Key keyToRemove) {
     std::cout << "-------- Remove ----------\n";
     int countRemoved(0);
     auto iter{registry.begin()};
     while(iter != registry.end()) {
         if(iter->key == keyToRemove) {
             ++countRemoved;
-            registry.erase(iter);
+            iter = registry.erase(iter);        // Important! Update the iterator
         } else {
             ++iter;
         }
@@ -59,31 +59,27 @@ void Registry<T>::remove(T keyToRemove) {
     }
 }
 
-template<typename T>
-void Registry<T>::find(T keyToFind) {
+template<typename Key, typename Value>
+void Registry<Key, Value>::find(Key keyToFind) const {
     std::cout << "----------- Find -----------\n";
-    int countFound (0);
-    std::vector<OneRow> rows{};
 
-    for(const auto& row : registry) {
-        if(row.key == keyToFind) {
-            ++countFound;
-            rows.emplace_back(row);
-        }
-    }
-    
-    if(countFound) {
-        std::cout << keyToFind << "  was successfully found.\n";
-        for(const auto& row : rows) {
+    bool found = false;
+    for (const auto& row : registry) {
+        if (row.key == keyToFind) {
+            if (!found) {
+                std::cout << keyToFind << "  was successfully found.\n";
+                found = true;
+            }
             row.print();
         }
-    } else {
+    }
+    if (!found) {
         std::cout << keyToFind << " not found.\n";
     }
 }
 
-template<typename T>
-void Registry<T>::print() {
+template<typename Key, typename Value>
+void Registry<Key, Value>::print() const {
     std::cout << "-------- Print --------------\n";
     for(const auto& row : registry) {
         row.print();

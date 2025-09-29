@@ -4,10 +4,10 @@
 
 int main() {
 
-    std::cout << "Hello Erase Vector!\n";
+    std::cout << "Hello!\n";
 
     std::cout << "\n=========== INT ============\n";
-    Registry<int> regInt{};
+    Registry<int, int> regInt{};
     std::cout << "-------- Add ------------\n";
     regInt.add(67, 69);
     regInt.add(2, 5);
@@ -30,7 +30,7 @@ int main() {
     regInt.print();
     
     std::cout << "\n========== DOUBLE =============\n";
-    Registry<double> regDouble{};
+    Registry<double, double> regDouble{};
     std::cout << "-------- Add ------------\n";
     regDouble.add(3.14, getPI());
     regDouble.add(2.71, getE());
@@ -51,7 +51,7 @@ int main() {
 
     std::cout << "\n========== STRING =============\n";
     std::cout << "-------- Add ------------\n";
-    Registry<std::string> regString{};
+    Registry<std::string, std::string> regString{};
     regString.add("Hello", "World");
     regString.add("Goodbye", "Skillbox");
     regString.add("Tom", "Hanks");
