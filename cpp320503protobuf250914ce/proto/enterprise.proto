@@ -1,0 +1,11 @@
+// enterprise.proto
+syntax = "proto2";
+
+message Enterprise {
+  required int32 foundation_year = 1;  // Year of foundation
+  required string legal_address = 2;   // Legal address
+  required string name = 3;            // Name
+
+  optional string activity_type = 4;  // Occupation
+  optional bool has_foreign_activity = 5 [default = false]; // Foreign economic activity
+}
