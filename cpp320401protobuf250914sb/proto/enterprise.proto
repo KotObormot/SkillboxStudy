@@ -1,0 +1,11 @@
+// enterprise.proto
+syntax = "proto2";
+
+message Enterprise {
+  required int32 foundation_year = 1;  // Год основания
+  required string legal_address = 2;   // Юридический адрес
+  required string name = 3;            // Название
+
+  optional string activity_type = 4;  // Род деятельности
+  optional bool has_foreign_activity = 5 [default = false]; // Осуществление внешнеэкономической деятельности
+}
