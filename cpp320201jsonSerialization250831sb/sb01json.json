@@ -1,0 +1,19 @@
+{
+  "args": null, 
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", 
+    "Accept-Encoding": "gzip, deflate, br, zstd", 
+    "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3", 
+    "Host": "httpbin.org", 
+    "Priority": "u=0, i", 
+    "Sec-Fetch-Dest": "document", 
+    "Sec-Fetch-Mode": "navigate", 
+    "Sec-Fetch-Site": "none", 
+    "Sec-Fetch-User": "?1", 
+    "Upgrade-Insecure-Requests": "1", 
+    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0", 
+    "X-Amzn-Trace-Id": "Root=1-68b46f16-6b0d99df4228eecf4afff082"
+  }, 
+  "origin": "84.53.216.175", 
+  "url": "https://httpbin.org/get"
+}
