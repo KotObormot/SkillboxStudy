@@ -12,7 +12,7 @@ struct Record {
 
 int main() {
     Record record;
-    std::ifstream file("/home/itsme/skillbox/20250831sb322json-serialization/data/record.json");
+    std::ifstream file("../data/record.json");
 
     if(!file.is_open()) {
         std::cerr << "File not found.\n";
