@@ -6,7 +6,6 @@ bool is_field_OK(bool field[][10], int x, int y) {
             field[x][y] = true;
             isOK = true;
         }
-
         return isOK;
 }
 
