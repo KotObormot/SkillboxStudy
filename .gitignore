@@ -16,4 +16,4 @@ bin/
 nlohmann_json
 .git/
 *.exe
-
+*.code-workspace
