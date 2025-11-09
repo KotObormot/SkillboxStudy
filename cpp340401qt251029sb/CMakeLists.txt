@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Находим пакет Qt 5 с нужными компонентами (например, Widgets)
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
+find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets WaylandClient)
 
 # Создаем исполняемый файл
 add_executable(${PROJECT_NAME}
@@ -27,6 +27,7 @@ target_link_libraries(${PROJECT_NAME}
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets
+        Qt5::WaylandClient
 )
 
 #install(TARGETS ${PROJECT_NAME}
