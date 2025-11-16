@@ -27,4 +27,9 @@ int main(int argc, char *argv[])
     app.exec();
 }
 
-#include <main.moc>
+//#include <main.moc>
+/********************************************
+что означает includes the moc file "main.moc", but does not contain a q_object, q_gadget, q_namespace or q_namespace_export macro.
+Если ваш файл main.cpp не содержит класса, унаследованного от QObject (или использующего другие макросы мета-объектной системы) 
+и не требует генерации мета-информации, то включение MOC-файла не нужно, и его можно просто удалить.
+*********************************************/
